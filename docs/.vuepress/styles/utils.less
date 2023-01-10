@@ -1,0 +1,149 @@
+@colors: {
+  primary: #2c8df4;
+  link: #0073ed;
+  success: #23c172;
+  warning: #faad14;
+  danger: #fa5f5f;
+  black: #000000;
+  gray26: #262a30;
+  gray5c: #5c626b;
+  gray95: #959ba3;
+  graycb: #cbcfd6;
+  graye9: #e9ecf0;
+  grayf7: #f7f8f9;
+  white: #ffffff;
+};
+
+@values: 10, 12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 60;
+
+@fontWeights: {
+  400: PingFangSC-Regular;
+  500: PingFangSC-Medium;
+  600: PingFangSC-SNaNpxibold;
+};
+
+each(@values,.(@val) {
+  .fs-@{val} {
+    font-size: @val * 1px;
+  }
+  .mt-@{val} {
+    margin-top: @val * 1px;
+  }
+  .mr-@{val} {
+    margin-right: @val * 1px;
+  }
+  .mb-@{val} {
+    margin-bottom: @val * 1px;
+  }
+  .ml-@{val} {
+    margin-left: @val * 1px;
+  }
+  .mtb-@{val} {
+    margin-top: @val * 1px;
+    margin-bottom: @val * 1px;
+  }
+  .mlr-@{val} {
+    margin-left: @val * 1px;
+    margin-right: @val * 1px;
+  }
+  .m-@{val}{
+    margin: @val * 1px;
+  }
+  .pt-@{val} {
+    padding-top: @val * 1px;
+  }
+  .pr-@{val} {
+    padding-right: @val * 1px;
+  }
+  .pb-@{val} {
+    padding-bottom: @val * 1px;
+  }
+  .pl-@{val} {
+    padding-left: @val * 1px;
+  }
+  .ptb-@{val} {
+    padding-top: @val * 1px;
+    padding-bottom: @val * 1px;
+  }
+  .plr-@{val} {
+    padding-left: @val * 1px;
+    padding-right: @val * 1px;
+  }
+  .p-@{val}{
+    padding: @val * 1px;
+  }
+});
+
+each(@colors,.(@colorValue, @colorKey) {
+    //字体颜色
+  .@{colorKey} {
+    color: @colorValue !important;
+  }
+  //背景颜色
+  .bg-@{colorKey} {
+    background-color: @colorValue !important;
+  }
+  each(@fontWeights,.(@fontFamily,@fontWeight) {
+    each(@values, .(@val) {
+      .@{colorKey}-@{val} {
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        font-size: @val * 1px;
+        color: @colorValue;
+        line-height: 1.5;
+      }
+      .@{colorKey}-@{val}-@{fontWeight} {
+        font-family: @fontFamily;
+        font-weight: @fontWeight;
+        font-size: @val * 1px;
+        color: @colorValue;
+        line-height: 1.5;
+      }
+    });
+  });
+});
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.text-clip {
+  color: transparent;
+  background: linear-gradient(90deg, #61b1ff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+}
