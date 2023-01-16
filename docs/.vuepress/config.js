@@ -2,15 +2,15 @@ module.exports = {
   title: "绿城Web组件库",
   description: "绿城Web组件库",
   base: "/",
-  theme: "reco",
   locales: {
     "/": {
       lang: "zh-CN",
     },
   },
   themeConfig: {
+    logo: "/logo.png",
     subSidebar: "auto",
-    nav: [{ text: "首页", link: "/articles/color" }],
+    smoothScroll: true,
     sidebar: [
       {
         title: "Color 色彩-亮色模式",
@@ -75,6 +75,50 @@ module.exports = {
       {
         title: "Selctor选择器",
         path: "/articles/gtSelect",
+      },
+      {
+        title: "Upload上传",
+        path: "/articles/gtUpload",
+      },
+      {
+        title: "Badge徽标",
+        path: "/articles/badge",
+      },
+      {
+        title: "Tag标签",
+        path: "/articles/tag",
+      },
+      {
+        title: "Tree树形组件",
+        path: "/articles/tree",
+      },
+      {
+        title: "Progress进度条",
+        path: "/articles/gtProgress",
+      },
+      {
+        title: "Table表格",
+        path: "/articles/gtTable",
+      },
+      {
+        title: "ScrollBar滚动条",
+        path: "/articles/scrollbar",
+      },
+      {
+        title: "Tooltip文字提示",
+        path: "/articles/tooltip",
+      },
+      {
+        title: "Popup弹窗",
+        path: "/articles/popup",
+      },
+      {
+        title: "Prompt提示",
+        path: "/articles/prompt",
+      },
+      {
+        title: "Empty page空页面",
+        path: "/articles/empty",
       },
     ],
   },
